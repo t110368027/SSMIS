@@ -14,7 +14,7 @@
 
 </div>
 
----
+
 
 ## 📝 Description   
 This Project is focus on Semi Supervised Medical Image Segmentation
@@ -37,3 +37,11 @@ This Project is focus on Semi Supervised Medical Image Segmentation
     - https://github.com/albumentations-team/albumentations/
 - MONAI: 1.2.0
     - https://github.com/Project-MONAI/MONAI
+
+## 📜 Acknowledgements
+- [SSL4MIS](https://github.com/HiLab-git/SSL4MIS/tree/master)
+
+
+## 🔮 Questions and Suggestions
+
+If you have any questions or suggestions about this project, please contact me through email: t110368027@ntut.org.tw
