@@ -3,7 +3,6 @@
 The implementation is borrowed from: https://github.com/HiLab-git/PyMIC
 """
 from __future__ import division, print_function
-
 import numpy as np
 import torch
 import torch.nn as nn
@@ -62,11 +61,7 @@ class UpBlock(nn.Module):
 
     def forward(self, x1, x2):
         if self.bilinear:
-            x1 = nn.functional.interpolate(
-                x1,
-                scale_factor=2,
-                mode="nearest-exact",
-            )
+            x1 = nn.functional.interpolate(x1, scale_factor=2, mode="bilinear")
         else:
             x1 = self.up(x1)
         x = torch.cat([x2, x1], dim=1)
@@ -177,11 +172,9 @@ class UNet(nn.Module):
         params = {
             "in_chns": in_chns,
             "feature_chns": [16, 32, 64, 128, 256],
-            #   'feature_chns': [32, 64, 128, 256, 512],
             "dropout": [0.05, 0.1, 0.2, 0.3, 0.5],
             "class_num": class_num,
             "bilinear": False,
-            "acti_func": "relu",
         }
 
         self.encoder = Encoder(params)
