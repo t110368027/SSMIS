@@ -7,6 +7,13 @@ from typing import Callable, List, Tuple
 import random
 import numpy as np
 from .aug_method_pil import Aug_Methods
+from .aug_method_tf import strong_aug, weak_aug, no_aug
+
+__all__ = [
+    "strong_aug",
+    "weak_aug",
+    "no_aug",
+]
 
 
 def aug_list() -> List[Tuple[Callable, float, float]]:
